@@ -21,7 +21,7 @@ get_header();
         <section class="about-mission">
             <div class="container">
                 <h2>Our Mission</h2>
-                <p>At Essence Cosmetics, our mission is to empower every individual to feel confident, beautiful, and authentic in their own skin.</p>
+                <p>Our mission is to empower every individual to feel confident, beautiful, and authentic in their own skin.</p>
             </div>
         </section>
 
