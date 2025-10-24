@@ -1,24 +1,28 @@
 <?php get_header(); ?>
 
+
+
 <div id="container">
-    <div id="inner_container">
-        <div id="imgs_container">
-            <div class="img_container">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" alt="Essence Lipsticks">
-            </div>
-            <div class="img_container">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" alt="Essence Nail Colors">
-            </div>
-            <div class="img_container">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" alt="Essence Skincare Range">
-            </div>
-        </div>
-        <div id="overlay">
-            <div id="left_button" class="overlay_button" onclick="onLeftButton()">&lt;</div>
-            <div id="right_button" class="overlay_button" onclick="onRightButton()">&gt;</div>
-        </div>
+  <div id="inner_container">
+    <div id="imgs_container">
+      <div class="img_container">
+        <img src="/images/1.jpg" alt="Slide 1">
+      </div>
+      <div class="img_container">
+        <img src="/images/2.jpg" alt="Slide 2">
+      </div>
+      <div class="img_container">
+        <img src="/images/3.webp" alt="Slide 3">
+      </div>
     </div>
+
+    <div id="overlay">
+      <div id="left_button" class="overlay_button">&#10094;</div>
+      <div id="right_button" class="overlay_button">&#10095;</div>
+    </div>
+  </div>
 </div>
+
 
 <div style="text-align:center" class="slider-dots">
     <span class="dot" onclick="currentSlide(1)"></span>

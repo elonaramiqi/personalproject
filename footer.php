@@ -31,5 +31,32 @@
 </div><!-- Closing wrapper or site div, if any -->
 
 <?php wp_footer(); ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const imgsContainer = document.getElementById('imgs_container');
+  const slides = document.querySelectorAll('.img_container');
+  const next = document.getElementById('right_button');
+  const prev = document.getElementById('left_button');
+  let index = 0;
+
+  function showSlide(i) {
+    if (i >= slides.length) index = 0;
+    if (i < 0) index = slides.length - 1;
+    imgsContainer.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  next.addEventListener('click', () => {
+    index++;
+    showSlide(index);
+  });
+
+  prev.addEventListener('click', () => {
+    index--;
+    showSlide(index);
+  });
+});
+</script>
+
 </body>
 </html>
