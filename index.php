@@ -1,37 +1,39 @@
 <?php get_header(); ?>
 
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
+        
+        <div class="container">
 
+            <header class="page-header">
+                <h1 class="page-title"><?php esc_html_e( 'Blog', 'essence' ); ?></h1>
+            </header>
 
-        <div id="content" class="site-content">
-            <div id="primary" class="content-area">
-                <main id="main" class="site-main">
-                    <h1>Blog</h1>
-                    <div class="container">
-                        <div class="blog-items">
-                            <?php 
-                                if( have_posts() ):
-                                    while( have_posts() ) : the_post();
-                                    get_template_part( 'parts/content' );
-                                    endwhile;
-                                    ?>
-                                        <div class="wpdevs-pagination">
-                                            <div class="pages new">
-                                                <?php previous_posts_link( "<< Newer posts" ); ?>
-                                            </div>
-                                            <div class="pages old">
-                                                <?php next_posts_link( "Older posts >>" ); ?>
-                                            </div>
-                                        </div>
-                                    <?php
-                                else: ?>
-                                    <p>Nothing yet to be displayed!</p>
-                            <?php endif; ?>                                
+            <div class="blog-items">
+                <?php if ( have_posts() ) : ?>
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php get_template_part( 'parts/content', get_post_format() ); ?>
+                    <?php endwhile; ?>
+
+                    <nav class="wpdevs-pagination" role="navigation" aria-label="<?php esc_attr_e( 'Pagination', 'essence' ); ?>">
+                        <div class="pages new">
+                            <?php previous_posts_link( esc_html__( '<< Newer posts', 'essence' ) ); ?>
                         </div>
-                        <?php get_sidebar(); ?>
-                    </div>
-                    <div class="wpdevs-slider">
+                        <div class="pages old">
+                            <?php next_posts_link( esc_html__( 'Older posts >>', 'essence' ) ); ?>
+                        </div>
+                    </nav>
 
-                </main>
-            </div>
-        </div>
+                <?php else : ?>
+                    <p><?php esc_html_e( 'Nothing yet to be displayed!', 'essence' ); ?></p>
+                <?php endif; ?>
+            </div><!-- .blog-items -->
+
+            <?php get_sidebar(); ?>
+
+        </div><!-- .container -->
+
+    </main><!-- #main -->
+</div><!-- #primary -->
+
 <?php get_footer(); ?>

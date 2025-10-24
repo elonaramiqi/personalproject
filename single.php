@@ -30,8 +30,7 @@ get_header();
                 </div>
             </nav>
 
-            <?php
-                // If comments are open or there is at least one comment, load the comment template
+            <?php 
                 if ( comments_open() || get_comments_number() ) :
                     comments_template();
                 endif;
