@@ -1,18 +1,17 @@
 <?php get_header(); ?>
 
 
-
 <div id="container">
   <div id="inner_container">
     <div id="imgs_container">
       <div class="img_container">
-        <img src="/images/1.jpg" alt="Slide 1">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/essence.webp" alt="Slide 1">
       </div>
       <div class="img_container">
-        <img src="/images/2.jpg" alt="Slide 2">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/7.webp" alt="Slide 2">
       </div>
       <div class="img_container">
-        <img src="/images/3.webp" alt="Slide 3">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/5.webp" alt="Slide 3">
       </div>
     </div>
 
@@ -43,6 +42,12 @@
 
             <section class="services">
                 <h2>What We Offer</h2>
+                <p>At Essence Cosmetics, we offer everything you need to elevate your beauty routine and stay inspired, such as: </p>
+                <ul>
+                    <li>✅ Make Up</li>
+                    <li>✅ Skincare</li>
+                    <li>✅ Step-by-step makeup tutorials</li>
+                </ul>
                 <div class="container">
                     <div class="services-item">
                         <?php if ( is_active_sidebar( 'services-1' ) ) { dynamic_sidebar( 'services-1' ); } ?>
@@ -58,27 +63,22 @@
 
             <section class="home-blog">
                 <h2>Latest Beauty Picks </h2>
-                <div class="container">
-                    <?php 
-                    $args = array(
-                        'post_type'      => 'post',
-                        'posts_per_page' => 5,
-                        'category__in'   => array( 9, 10, 15 ), 
-                        'category__not_in' => array( 1 )       
-                    );
+                <div class="products">
+    <div class="product">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/8.jpg" alt="Lash Princess False Lash Mascara">
+      <h3>lash princess<br>false lash<br>mascara</h3>
+      <p class="price">$ 4.99</p>
+    </div>
 
-                    $postlist = new WP_Query( $args );
-
-                    if ( $postlist->have_posts() ) :
-                        while ( $postlist->have_posts() ) : $postlist->the_post();
-                            get_template_part( 'parts/content', 'latest-news' );
-                        endwhile;
-                        wp_reset_postdata();
-                    else : ?>
-                        <p>No beauty tips or product updates at the moment — check back soon!</p>
-                    <?php endif; ?>
-                </div>
-            </section>
+    <div class="product">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/9.jpg"alt="I Love Extreme Crazy Volume Mascara">
+      <h3>i love extreme<br>crazy volume<br>mascara</h3>
+      <p class="price">$ 4.99</p>
+    </div>
+  </div>
+</section>
+        
+     </section>
 
         </main>
     </div>

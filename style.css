@@ -1304,7 +1304,7 @@ a img.aligncenter {
 
 .about-what-we-cover ul li {
     background: #eaf0f6;
-    border-left: 4px solid plum;
+    border-left: 4px solid rgba(255, 192, 203, 0.8)eb7;
     margin-bottom: 10px;
     padding: 12px 15px;
     font-size: 1rem;
@@ -1393,7 +1393,7 @@ footer .copyright p {
   max-width: 800px;
   margin: 40px auto;
   overflow: hidden;
-  background-color: #111;
+  background-color: rgba(255, 192, 203, 0.8);
   border-radius: 10px;
 }
 
@@ -1433,8 +1433,8 @@ footer .copyright p {
   pointer-events: all;
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 192, 203, 0.8);
-  color: #333;
+  background-color: #333;
+  color: rgba(255, 192, 203, 0.8) ;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1447,3 +1447,61 @@ footer .copyright p {
 .overlay_button:hover {
   background-color: rgba(255, 182, 193, 1);
 }
+
+.beauty-picks {
+  text-align: center;
+  padding: 40px;
+}
+
+.beauty-picks h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.beauty-picks h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #7c4dff;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  color: #a1007e;
+  font-size: 1rem;
+  text-transform: lowercase;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
